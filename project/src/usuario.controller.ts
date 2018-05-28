@@ -4,14 +4,17 @@ import {Controller, Get, Req, Res} from "@nestjs/common";
 export class UsuarioController {
 
     @Get('logueo')
-    usuarioLogeoCookie(@Res() res,
+    usuarioLogueoCookie(@Res() res,
                        @Req() req) {
         const parametros = {
             nombre: "Tu cookie",
             valor: "Tu cache"
         };
+        //console.log(req.cookies)
         res.cookie(parametros.nombre, parametros.valor);
+
         return res.send({mensaje: 'Tu cookie esta en cache'});
+
     }
 
 }

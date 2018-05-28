@@ -6,10 +6,12 @@ import {NestMiddleware} from "@nestjs/common";
 export class CookieMiddleware implements NestMiddleware{
     resolve(): ExpressMiddleware {
         return (request, response, next) => {
+
             if (request.cookies!=null)
                 console.log("EN CACHE");
             else
                 console.log("NO EN CACHE");
+
             next();
         };
     }
