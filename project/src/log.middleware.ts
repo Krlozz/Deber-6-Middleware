@@ -17,7 +17,8 @@ export class LogMiddleware implements NestMiddleware{
                     console.log(this.getRespuesta(request));
                     next();
                     break;
-                case "todo":this.guardarArchivoLog(request);
+                case "todo":
+                    this.guardarArchivoLog(request);
                     console.log(this.getRespuesta(request));
                     next();
                     break;
@@ -42,6 +43,6 @@ export class LogMiddleware implements NestMiddleware{
 
     guardarArchivoLog(req){
         let contenido = JSON.stringify(this.getRespuesta(req))
-        fs.writeFileSync(__dirname+'/Logs/logs.txt', contenido);
+        fs.writeFileSync(__dirname+'/logs.txt', contenido);
     }
 }

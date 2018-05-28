@@ -15,15 +15,15 @@ export class AppModule implements NestModule{
     configure(consumer: MiddlewaresConsumer){
 
         // 1° parte
-        consumer
+        /*consumer
             .apply(LogMiddleware)
             .with('todo') // parametro del middleware
-            .forRoutes(AppController);
+            .forRoutes(AppController);*/
 
         // 2° parte
-        /*consumer
+        consumer
             .apply(CookieMiddleware)
-            .forRoutes(UsuarioComtroller);*/
+            .forRoutes(UsuarioController)
 
     }
 }

@@ -5,11 +5,11 @@ import {NestMiddleware} from "@nestjs/common";
 @Middleware()
 export class CookieMiddleware implements NestMiddleware{
     resolve(): ExpressMiddleware {
-        return (request, response, next) => {     //   Obtención de la cookie
+        return (request, response, next) => {
             if (request.cookies!=null)
-                console.log("Esta en cache...!!!");
+                console.log("EN CACHE");
             else
-                console.log("No se encuentra en cache...!!!");
+                console.log("NO EN CACHE");
             next();
         };
     }
