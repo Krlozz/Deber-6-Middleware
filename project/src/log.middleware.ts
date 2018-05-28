@@ -24,6 +24,7 @@ export class LogMiddleware implements NestMiddleware{
             }
         };
     }
+
     getRespuesta(req){
         const respuesta = {
             baseUrl: req.baseUrl,
