@@ -11,7 +11,7 @@ export class UsuarioController {
             valor: "Tu cache"
         };
         res.cookie(parametros.nombre, parametros.valor);
-        return res.send({menasaje: 'Tu cookie esta en cache'});
+        return res.send({mensaje: 'Tu cookie esta en cache'});
     }
 
 }
